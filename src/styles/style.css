@@ -1,0 +1,539 @@
+@font-face {
+   font-family: 'Arcade';
+   src: url(../fonts/arcade/ARCADE.TTF);
+}
+
+@font-face {
+   font-family: 'PixBob';
+   src: url(../fonts/pixbob/PixBob-Lite\ Free\ -\ Clean-SVG.ttf);
+}
+
+@font-face {
+   font-family: 'Gilroy';
+   src: url(../fonts/gilroy/ofont.ru_Gilroy.ttf);
+}
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+html {
+   font-size: 2vw;
+   font-family: 'Gilroy';
+   font-weight: 700;
+   color: #f2f2ea;
+}
+
+body {
+   background-color: #f2f2ea;
+   overflow-x: hidden;
+}
+
+a {
+   text-decoration: none;
+}
+
+hr {
+   background-color: black;
+   border-color: black;
+}
+
+ul, li {
+   list-style-type: none;
+}
+
+header {
+   position: fixed;
+   z-index: 1001;
+   width: 100vw;
+   /* top: 0.1rem; */
+   display: flex;
+   justify-content: flex-end;
+   background-color: #6ed2ec;
+}
+
+.header__logo {
+   margin-right: 10rem;
+   height: 2rem;
+}
+
+.header__logo img {
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+}
+
+.header__menu {
+   font-family: 'PixBob';
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   font-size: 1rem;
+   margin-right: 10rem;
+}
+
+.header__menu a {
+   text-decoration: none;
+   color: #f2f2ea;
+}
+
+.header__menu__item {
+   cursor: pointer;
+   /* transition: color 0.3s ease-in-out; */
+   transition: opacity 0.3s ease-in-out;
+}
+
+.header__menu__item:hover {
+   /* color: #e2e2da; */
+   opacity: 0.7;
+}
+
+.header__socials {
+   display: flex;
+   align-items: center;
+   margin-right: 3rem;
+   gap: 0.7rem;
+   font-size: 1rem;
+   color: #FFFFFF;
+}
+
+.header__socials img {
+   width: 1.2rem;
+   height: 1.2rem;
+   color: white;
+}
+
+.header__socials a {
+   color: #FFFFFF;
+}
+
+.path3:hover {
+   color: blue;
+}
+
+@media (max-width: 800px) {
+   header {
+      width: 100vw;
+      left: 0;
+   }
+
+   .header__socials {
+      margin-right: 2rem;
+      font-size: 2rem;
+      flex-direction: column;
+   }
+}
+
+.main-wrapper {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+}
+
+.mw__wrapper {
+   width: 100%;
+   height: 100%;
+   background: url(../imgs/market1.gif) center no-repeat;
+   background-size: 100% 100%;
+}
+
+.mw__wrapper-play {
+   width: 100%;
+   height: 100%;
+   display: none;
+   background: url(../imgs/market2.gif) center no-repeat;
+   background-size: 100% 100%;
+}
+
+.player {
+   position: absolute;
+   height: 3rem;
+   bottom: 1rem;
+   left: 1rem;
+   color: #f2f2ea;
+   z-index: 1000;
+
+   text-align: center;
+   font-size: 1.2rem;
+   width: 15rem;
+}
+
+.song {
+   font-size: 0.8rem;
+}
+
+.progress__container {
+   margin-top: 0.5rem;
+   border-radius: 0.2rem;
+   width: 100%;
+   height: 0.2rem;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   background-color: gray;
+}
+
+.progress {
+   background-color: white;
+   border-radius: 0.2rem;
+   height: 0.15rem;
+}
+
+.buttons {
+   margin-top: 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+}
+
+.buttons i {
+   cursor: pointer;
+}
+
+.buttons img {
+   cursor: pointer;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   user-select: none;
+   /* pointer-events: none; */
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
+.fa-play, .fa-pause {
+   font-size: 1.5rem;
+}
+
+.mw__timer-container {
+   position: absolute;
+   bottom: 45%;
+   left: 35%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   font-weight: 700;
+   font-size: 1rem;
+   color: black;
+}
+
+.about {
+   position: relative;
+   margin-top: 2rem;
+   display: flex;
+   gap: 1rem;
+   width: 95vw;
+   margin: 2rem auto;
+   background-color: #94ddec;
+   color: black;
+   /* opacity: 0; */
+   transition: opacity 0.3s ease-in-out;
+}
+
+.dialog-window {
+   position: absolute;
+   height: 12rem;
+   width: 20.5rem;
+   left: 18rem;
+   top: 0rem;
+   /* opacity: 0; */
+   transition: opacity 0.5s ease-in-out
+}
+
+.dialog-samurai {
+   flex-basis: 20rem;
+   height: 20rem;
+   /* opacity: 0; */
+   transition: opacity 0.3s ease-in-out;
+}
+
+.about__info-container {
+   font-family: 'PixBob';
+   position: absolute;
+   top: 2.5rem;
+   width: 20rem;
+   right: 8.5rem;
+   font-size: 1.2rem;
+   /* opacity: 0; */
+   transition: opacity 0.5s ease-in-out;
+}
+
+.about__info {
+   line-height: 1.5rem;
+}
+
+.nft-gallery {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.594rem;
+   width: 95vw;
+   height: 35rem;
+   margin: 0 auto;
+   color: black;
+
+   display: flex;
+   align-items: flex-end;
+}
+
+.nft-gallery__imgs {
+   width: 100vw;
+   margin-top: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nft-gallery__imgs div {
+   width: 30rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0.5rem;
+   flex-wrap: wrap;
+}
+
+.nft-gallery__imgs img {
+   object-fit: cover;
+   width: 7rem;
+   height: 7rem;
+   /* opacity: 0; */
+}
+
+
+.nft-gallery__title {
+   font-family: 'PixBob';
+   text-transform: uppercase;
+   font-size: 3rem;
+   white-space: nowrap;
+   overflow: hidden;
+   border-right: 0.2rem solid orange;
+   animation: flashing-border 0.75s step-end infinite;
+}
+
+
+
+.nft-gallery__info {
+   width: 100vw;
+   font-weight: 500;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+.nft-gallery__info p {
+   width: 30rem;
+   /* opacity: 0; */
+   transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.roadmap {
+   width: 95vw;
+   height: 17rem;
+   margin: 2rem auto;
+   color: black;
+}
+
+.roadmap__container {
+   height: 20rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.roadmap__title {
+   font-family: 'PixBob';
+   text-transform: uppercase;
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   white-space: nowrap;
+   overflow: hidden;
+   border-right: 0.2rem solid orange;
+   animation: flashing-border 0.75s step-end infinite;
+}
+
+.roadmap__steps {
+   width: 100%;
+   font-size: 2rem;
+   display: flex;
+   gap: 2rem;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.steps__step {
+   /* opacity: 0; */
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   height: 5rem;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.steps__text {
+   margin-top: 0.5rem;
+   font-size: 1.2rem;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+.roadmap__steps div {
+   width: 45%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.faq {
+   color: black;
+   width: 95vw;
+   height: 19rem;
+   text-align: center;
+   margin: 2rem auto;
+   display: flex;
+   white-space: nowrap;
+   text-transform: uppercase;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.faq__title {
+   font-family: 'PixBob';
+   text-transform: uppercase;
+   font-size: 3rem;
+   white-space: nowrap;
+   overflow: hidden;
+   border-right: 0.2rem solid orange;
+   animation: flashing-border 0.75s step-end infinite;
+}
+
+.faq__items {
+   margin-top: 1rem;
+   width: 100%;
+   height: 10rem;
+   display: flex;
+   justify-content: flex-start;
+   gap: 1rem;
+   flex-wrap: wrap;
+}
+
+.faq__items__item {
+   width: 45%;
+   /* opacity: 0; */
+   transition: opacity 0.5s ease-in-out;
+}
+
+.item h3 {
+   white-space: normal;
+   cursor: pointer;
+}
+
+.item__text {
+   /* display: none; */
+   margin-top: 0.5rem;
+   font-size: 0.7rem;
+   white-space: normal;
+}
+
+.active__item__text {
+   display: block;
+}
+
+.team {
+   height: 11rem;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   flex-direction: column;
+   gap: 2rem;
+   margin: 5rem auto;
+   width: 100vw;
+   padding-bottom: 3rem;
+}
+
+.team__title {
+   font-family: 'PixBob';
+   color: black;
+   display: block;
+   text-transform: uppercase;
+   font-size: 3rem;
+   white-space: nowrap;
+   overflow: hidden;
+   border-right: 0.2rem solid orange;
+   animation: flashing-border 0.75s step-end infinite;
+}
+
+.team__imgs {
+   width: 100%;
+   height: 30%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 1.5rem;
+
+}
+
+.team__imgs__img {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 0.2rem;
+   color: black;
+   text-align: center;
+}
+
+.team__img {
+   width: 6rem;
+   height: 6rem;
+   /* opacity: 0; */
+}
+
+.team__nickname {
+   font-family: 'PixBob';
+   /* opacity: 0; */
+}
+
+.team__role {
+   font-size: 0.8rem;
+   /* opacity: 0; */
+}
+
+footer {
+   font-family: 'PixBob';
+   background-color: #6ed2ec;
+   height: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 0.5rem;
+}
+
+@keyframes flashing-border {
+   0% {
+      border-color: orange;
+   }
+
+   50% {
+      border-color: transparent;
+   }
+
+   100% {
+      border-color: orange;
+   }
+
+
+}

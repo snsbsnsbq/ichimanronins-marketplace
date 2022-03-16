@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0x395c8cbd1bADF811A4AFF57204D81d4F9EF8BeB6",
+  "SCAN_LINK": "https://polygonscan.com/token/0x395c8cbd1badf811a4aff57204d81d4f9ef8beb6",
+  "NETWORK": {
+    "NAME": "Polygon",
+    "SYMBOL": "Matic",
+    "ID": 137
+  },
+  "NFT_NAME": "MLBL_EYES",
+  "SYMBOL": "MLBL_EYES",
+  "MAX_SUPPLY": 50,
+  "WEI_COST": 75000000000000000,
+  "DISPLAY_COST": 0.02,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/mlbl-eyes",
+  "SHOW_BACKGROUND": false
+}
