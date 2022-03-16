@@ -147,6 +147,7 @@ function App() {
   return (
     <>
       <Header scrollY={scrollY} />
+      <Header scrollY={scrollY} />
       <main>
         <div className="main-wrapper mw">
           <Player played={played} setPlayed={setPlayed} />
